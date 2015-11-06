@@ -48,8 +48,10 @@ func main() {
 
 func runCmd(execCmd string, args...string) error {
 	cmd := exec.Command(execCmd, args...)
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
+	if *flVerbose {
+		cmd.Stdout = os.Stdout
+		cmd.Stderr = os.Stderr
+	}
 	return cmd.Run()
 }
 
