@@ -23,7 +23,7 @@ var (
 	
 	flVerbose = flag.Bool("v", false, "verbose mode")
 	flPrintDescriptor = flag.Bool("p", false, "print descriptor")
-	flDownloadPackage = flag.Bool("d", false, "download package if not exists in GOPATH")
+	flDownloadPackage = flag.Bool("d", false, "run go get tool")
 )
 
 func main() {
