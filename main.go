@@ -18,10 +18,10 @@ import (
 )
 
 var (
-	newLine = "\n"
+	newLine       = "\n"
 	newLineDouble = "\n\n"
-	
-	flVerbose = flag.Bool("v", false, "verbose mode")
+
+	flVerbose         = flag.Bool("v", false, "verbose mode")
 	flPrintDescriptor = flag.Bool("p", false, "print descriptor")
 	flDownloadPackage = flag.Bool("d", false, "run go get tool")
 )
@@ -46,7 +46,7 @@ func main() {
 	fmt.Println(localHash)
 }
 
-func runCmd(execCmd string, args...string) error {
+func runCmd(execCmd string, args ...string) error {
 	cmd := exec.Command(execCmd, args...)
 	if *flVerbose {
 		cmd.Stdout = os.Stdout
